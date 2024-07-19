@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GAN Image Generator</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{{ url_for('static', filename='css/styles.css') }}"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <h1>GAN Image Generator</h1>
+            <form action="/generate" method="post">
+                <button type="submit" class="btn">Generate Image</button>
+            </form>
+            {% if img_path %}
+            <h2>Generated Image</h2>
+            <img
+                src="{{ url_for('static', filename='generated_image.png') }}"
+                alt="Generated Image"
+            />
+            {% endif %}
+        </div>
+    </body>
+</html>
